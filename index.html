@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TechNova — Loja, Serviços e Locação de TI</title>
+<meta name="description" content="Loja completa de informática: hardware, softwares, manutenção, redes, hospedagem, consultoria e locação de equipamentos." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Pular para conteúdo</a>
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="brand-mark">TN</span><span>Tech<b>Nova</b></span></a>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="index.html">Início</a>
+      <a href="catalogo.html">Produtos</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="locacao.html">Locação</a>
+      <a href="conta.html">Minha conta</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="carrinho.html" class="icon-btn" aria-label="Carrinho">🛒 <span data-cart-count class="cart-count">0</span></a>
+      <a href="login.html" class="icon-btn" data-auth-guest>Entrar</a>
+      <a href="conta.html" class="icon-btn" data-auth-user style="display:none">👤 <span data-user-name></span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="container hero">
+    <div>
+      <span class="eyebrow">⚡ Plataforma TI all-in-one</span>
+      <h1>Hardware, serviços e locação de TI <span style="background:linear-gradient(90deg,var(--primary-2),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">no mesmo lugar</span>.</h1>
+      <p class="lead">Compre equipamentos, contrate manutenção, redes e segurança, alugue notebooks e servidores para eventos — tudo com entrega rápida e suporte especializado.</p>
+      <div class="hero-ctas">
+        <a href="catalogo.html" class="btn btn-primary">Explorar produtos →</a>
+        <a href="servicos.html" class="btn btn-outline">Ver serviços</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>+1.500</b><span>produtos no catálogo</span></div>
+        <div><b>24h</b><span>suporte remoto</span></div>
+        <div><b>4.9★</b><span>avaliação média</span></div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="img/hero.jpg" alt="Workspace de TI futurista com laptop e servidores iluminados em neon roxo e ciano" width="1600" height="900" />
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="section-head">
+      <div><h2>Categorias</h2><p>Navegue pelas principais áreas da loja.</p></div>
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+  </section>
+
+  <section class="container section">
+    <div class="section-head">
+      <div><h2>Em destaque</h2><p>Selecionados pela equipe TechNova.</p></div>
+      <a href="catalogo.html">Ver tudo →</a>
+    </div>
+    <div class="grid" id="featuredGrid"></div>
+  </section>
+
+  <section class="container section">
+    <div class="section-head">
+      <div><h2>Ofertas da semana 🔥</h2><p>Promoções com tempo limitado.</p></div>
+      <a href="catalogo.html">Ver mais →</a>
+    </div>
+    <div class="grid" id="promoGrid"></div>
+  </section>
+
+  <section class="container section">
+    <div class="section-head">
+      <div><h2>Serviços populares</h2><p>Atendimento técnico presencial e remoto.</p></div>
+      <a href="servicos.html">Ver todos →</a>
+    </div>
+    <div class="grid" id="servicesGrid"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.75rem"><span class="brand-mark">TN</span><span>Tech<b style="background:linear-gradient(90deg,var(--primary-2),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">Nova</b></span></div>
+        <p>Sua plataforma completa de TI — produtos, serviços e locação com atendimento especializado.</p>
+      </div>
+      <div><h4>Loja</h4><a href="catalogo.html">Produtos</a><a href="servicos.html">Serviços</a><a href="locacao.html">Locação</a></div>
+      <div><h4>Conta</h4><a href="login.html">Entrar</a><a href="cadastro.html">Cadastrar</a><a href="conta.html">Meus pedidos</a></div>
+      <div><h4>Contato</h4><a href="mailto:contato@technova.dev">contato@technova.dev</a><a href="tel:+551140028922">(11) 4002-8922</a><a href="#">Atendimento 24h</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 TechNova · Projeto acadêmico — Web Commerce de Informática</div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+  const d = window.TECHNOVA_DATA;
+  // Categories
+  document.getElementById('catGrid').innerHTML = d.categories.products.map(c=>
+    `<a class="cat-card" href="catalogo.html#${c.id}">
+      <div class="cat-icon">${c.icon}</div>
+      <h3>${c.name}</h3>
+      <small>Explorar →</small>
+    </a>`).join('');
+  // Featured products
+  const card = (i)=>{
+    const promo = i.promo ? '<span class="badge promo">OFERTA</span>' : '';
+    const old = i.old ? `<small>R$ ${i.old.toFixed(2).replace('.',',')}</small>` : '';
+    return `<article class="card">
+      <div class="card-media">${promo}<span>${i.emoji}</span></div>
+      <div class="card-body">
+        <h3>${i.name}</h3>
+        <div class="rating">${'★'.repeat(i.rating)}${'☆'.repeat(5-i.rating)}</div>
+        <p class="desc">${i.desc}</p>
+        <div class="price-row">
+          <div class="price">R$ ${i.price.toFixed(2).replace('.',',')}${old}</div>
+          <button class="btn btn-primary btn-sm" onclick="addToCart('${i.id}')">Adicionar</button>
+        </div>
+      </div>
+    </article>`;
+  };
+  document.getElementById('featuredGrid').innerHTML = d.products.filter(p=>p.featured).map(card).join('');
+  document.getElementById('promoGrid').innerHTML = d.products.filter(p=>p.promo).map(card).join('');
+  document.getElementById('servicesGrid').innerHTML = d.services.filter(s=>s.featured).map(card).join('');
+</script>
+</body>
+</html>

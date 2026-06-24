@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Catálogo de Produtos — TechNova</title>
+<meta name="description" content="Catálogo completo de hardware, periféricos, monitores e softwares." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Pular para conteúdo</a>
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="brand-mark">TN</span><span>Tech<b>Nova</b></span></a>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="catalogo.html">Produtos</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="locacao.html">Locação</a>
+      <a href="conta.html">Minha conta</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="carrinho.html" class="icon-btn">🛒 <span data-cart-count class="cart-count">0</span></a>
+      <a href="login.html" class="icon-btn" data-auth-guest>Entrar</a>
+      <a href="conta.html" class="icon-btn" data-auth-user style="display:none">👤 <span data-user-name></span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <section class="page-head">
+    <h1>Produtos</h1>
+    <p>Hardware, periféricos, monitores, redes, armazenamento e softwares para todos os perfis.</p>
+  </section>
+  <div class="search-bar">
+    <input id="searchInput" type="search" placeholder="🔎 Buscar produtos..." aria-label="Buscar" />
+  </div>
+  <div class="filters" id="filterChips" role="tablist"></div>
+  <div class="grid" id="productGrid"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-bottom">© 2026 TechNova · Web Commerce de TI</div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+  const d = window.TECHNOVA_DATA;
+  renderCatalog({ container:'productGrid', items:d.products, kind:'produto', categories:d.categories.products });
+  // deep link
+  const hash = location.hash.slice(1);
+  if(hash){ const chip = document.querySelector(`.chip[data-cat="${hash}"]`); if(chip) chip.click(); }
+</script>
+</body>
+</html>

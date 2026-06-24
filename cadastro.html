@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Criar conta — TechNova</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="brand-mark">TN</span><span>Tech<b>Nova</b></span></a>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="catalogo.html">Produtos</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="locacao.html">Locação</a>
+    </nav>
+    <div class="nav-actions"><a href="carrinho.html" class="icon-btn">🛒 <span data-cart-count class="cart-count">0</span></a></div>
+  </div>
+</header>
+<main class="auth-wrap container">
+  <form class="auth-card" onsubmit="return registerUser(event)">
+    <h1>Criar conta</h1>
+    <p class="sub">Leva menos de um minuto.</p>
+    <div class="field"><label>Nome completo</label><input type="text" name="name" required autocomplete="name"/></div>
+    <div class="field"><label>E-mail</label><input type="email" name="email" required autocomplete="email"/></div>
+    <div class="field"><label>Senha (mín. 6 caracteres)</label><input type="password" name="password" required minlength="6" autocomplete="new-password"/></div>
+    <button class="btn btn-primary btn-block" type="submit">Criar conta</button>
+    <p class="form-note">Já tem conta? <a href="login.html">Entrar</a></p>
+  </form>
+</main>
+<footer class="site-footer"><div class="container footer-bottom">© 2026 TechNova</div></footer>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
